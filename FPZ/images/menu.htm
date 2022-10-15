@@ -1,0 +1,299 @@
+<HTML><HEAD><TITLE>Futuristisch Platform Zeist</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+function stat_write(yourtext)
+{window.status=yourtext;}
+</SCRIPT>
+<body bgcolor="#FFFFCC">
+<p align="center">
+<br>
+<img border="0" src="images/logo.gif" width="135" height="168"></p>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="124" id="AutoNumber1">
+    <tr>
+      <td width="124">
+<p align="left"><BR clear=all>
+<script>
+// CREDITS:
+// Hierarchical Menu Version 2.01 by Urs Dudli and Peter Gehrig
+// Copyright (c) 2002 Peter Gehrig and Urs Dudli. All rights reserved.
+// Permission given to use the script provided that this notice remains as is.
+// Additional scripts can be found at http://www.24fun.com.
+// info@24fun.ch
+// 2/22/2002
+// IMPORTANT:
+// If you add this script to a script-library or script-archive
+// you have to add a link to http://www.24fun.com on the webpage
+// where this script Script will be running.
+var verspacetoplevel=5
+var verspacesublevel=4
+var horspace=1
+var textdeco="none"
+var minusimg=new Image()
+minusimg.src="images/arrowdown.gif"
+var plusimg=new Image()
+plusimg.src="images/arrowup.gif"
+var plusminusimgsrc=plusimg.src
+var content=""
+var fnttop="Verdana"
+var fnttopsize=11
+var fnttopcolor="black"
+var fnttopweight="bold"
+var fntsub="Verdana"
+var fntsubsize=9
+var fntsubcolor="8C420F"
+var fntsubweight="bold"
+var i_level=new Array(0,1,1,1,0,1,1,1,0,1,1,1,0)
+var i_url=new Array("","algemeen.htm","bestuur.htm","notulen.htm","","kaart3.htm","discussie.htm","reacties.htm","","essay.htm","column.htm","column2.htm", "contact.htm")
+var i_text=new Array("Info","Algemeen","Bestuur","Notulen","Actueel","Nieuws","Discussies","Reacties","Publicaties","Essay","Column 1","Column 2","Contact")
+var i_target=new Array("","main","main","main","","main","main","main","","main","main","main", "main")
+var whichi_opened=-1
+var i_opened=false
+var hassubmenus=false
+var istoppageitem=true
+var ie=document.all?1:0 
+var ns6=document.getElementById&&!document.all?1:0
+var ns4=document.layers?1:0
+function closesublevels() {
+plusminusimgsrc=plusimg.src
+content=""
+content+="<table border=0 cellpadding=0 cellspacing="+verspacesublevel+">"
+for (i=0;i<=i_level.length;i++) {
+hassubmenus=false
+if (i_level[i]==0) {
+var iplus=i+1
+if ((iplus<=i_level.length) && (i_level[iplus]==1)) {
+hassubmenus=true
+}
+if (hassubmenus) {
+if (!istoppageitem) {
+content+="<tr><td colspan=2><img src='emptypixel.gif' height="+verspacetoplevel+"></td></tr>"
+}
+istoppageitem=false;
+content+="<tr valign=middle>"
+content+="<td>"
+content+="<a href='javascript:opensublevels("+i+")'>"
+content+="<img src='"+plusminusimgsrc+"' border=0 hspace="+horspace+"></a>"
+content+="</td>"
+content+="<td>"
+content+="<a href='javascript:opensublevels("+i+")' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+else {
+if (!istoppageitem) {
+content+="<tr><td colspan=2><img src='emptypixel.gif' height="+verspacetoplevel+"></td></tr>"
+}
+istoppageitem=false;
+content+="<tr valign=middle><td></td>"
+if (i_url[i]!="#" && i_url[i]!="" && i_url[i]!="http://" && i_url[i].indexOf("@")<0) {
+content+="<td><a href='"+i_url[i]+"' target='"+i_target[i]+"' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+}
+else if (i_url[i].indexOf("@")>0) {
+content+="<td><a href='mailto:"+i_url[i]+"' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+}
+else {
+i_url[i]="#"
+content+="<td><a href='"+i_url[i]+"' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+}
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+}
+}
+content+="</table>"
+istoppageitem=true;
+whichi_opened=-1
+if (ie) {
+menu.innerHTML=content
+}
+if (ns6) {
+document.getElementById("menu").innerHTML=content
+}
+if (ns4) {
+document.menutop.document.menu.document.write(content)
+document.menutop.document.menu.document.close()
+}
+}
+function opensublevels(thisiopened) {
+if (whichi_opened==thisiopened) {
+openurl()
+closesublevels()
+}
+else {
+whichi_opened=thisiopened
+content=""
+content+="<table border=0 cellpadding=0 cellspacing="+verspacesublevel+">"
+for (i=0;i<=i_level.length;i++) {
+if (i_level[i]==0) {
+if (thisiopened==i) {i_opened=true}
+else {i_opened=false}
+var iplus=i+1
+if ((iplus<=i_level.length) && (i_level[iplus]==1)) {hassubmenus=true}
+else {hassubmenus=false}
+if (i_opened) {plusminusimgsrc=minusimg.src}
+else {plusminusimgsrc=plusimg.src}
+if (!istoppageitem) {
+content+="<tr><td colspan=2><img src='emptypixel.gif' height="+verspacetoplevel+"></td></tr>"
+}
+istoppageitem=false;
+content+="<tr valign=middle><td>"
+if (hassubmenus) {
+content+="<a href='javascript:opensublevels("+i+")'>"
+content+="<img src='"+plusminusimgsrc+"' border=0 hspace="+horspace+"></a>"
+}
+content+="</td>"
+content+="<td><a href='javascript:opensublevels("+i+")' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+else if (i_level[i]==1 && i_opened){
+content+="<tr valign=middle><td> </td>"
+if (i_url[i]!="#" && i_url[i]!="" && i_url[i]!="http://" && i_url[i].indexOf("@")<0) {
+content+="<td><a href='"+i_url[i]+"' target='"+i_target[i]+"' style='text-decoration:"+textdeco+";font-family:"+fntsub+";font-size:"+fntsubsize+"pt;color:"+fntsubcolor+";font-weight:"+fntsubweight+"'>"
+}
+else if (i_url[i].indexOf("@")>0) {
+content+="<td><a href='mailto:"+i_url[i]+"' style='text-decoration:"+textdeco+";font-family:"+fntsub+";font-size:"+fntsubsize+"pt;color:"+fntsubcolor+";font-weight:"+fntsubweight+"'>"
+}
+else {
+i_url[i]="#"
+content+="<td><a href='"+i_url[i]+"' style='text-decoration:"+textdeco+";font-family:"+fntsub+";font-size:"+fntsubsize+"pt;color:"+fntsubcolor+";font-weight:"+fntsubweight+"'>"
+}
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+}
+content+="</table>"
+if (ie) {
+menu.innerHTML=content
+}
+if (ns6) {
+document.getElementById("menu").innerHTML=content
+}
+if (ns4) {
+document.menutop.document.menu.document.write(content)
+document.menutop.document.menu.document.close()
+}
+istoppageitem=true;
+openurl()
+}
+}
+function openurl() {
+var selectedtarget=i_target[whichi_opened]
+var selectedurl=i_url[whichi_opened]
+if (selectedurl!="#" && selectedurl!="" && selectedurl!="http://" && selectedurl.indexOf("@")<0) {
+document.flink.target=selectedtarget
+document.flink.action=selectedurl
+document.flink.submit()
+}
+else if (selectedurl.indexOf("@")>0) {
+selectedurl="mailto:"+selectedurl
+document.flink.target=selectedtarget
+document.flink.action=selectedurl
+document.flink.submit()
+}
+}
+init()
+function init() {
+istoppageitem=true;
+content=""
+content+="<table border=0 cellpadding=0 cellspacing="+verspacesublevel+">"
+for (i=0;i<=i_level.length;i++) {
+if (i_level[i]==0) {
+var iplus=i+1
+if ((iplus<=i_level.length) && (i_level[iplus]==1)) {hassubmenus=true}
+else {hassubmenus=false}
+if (!istoppageitem) {
+content+="<tr><td colspan=2><img src='emptypixel.gif' height="+verspacetoplevel+"></td></tr>"
+}
+istoppageitem=false;
+content+="<tr valign=middle><td>"
+if (hassubmenus) {
+content+="<a href='javascript:opensublevels("+i+")'>"
+content+="<img src='"+plusminusimgsrc+"' border=0 hspace="+horspace+"></a>"
+}
+content+="</td>"
+content+="<td><a href='javascript:opensublevels("+i+")' style='text-decoration:"+textdeco+";font-family:"+fnttop+";font-size:"+fnttopsize+"pt;color:"+fnttopcolor+";font-weight:"+fnttopweight+"'>"
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+else if (i_level[i]==1){
+content+="<tr valign=middle><td> </td>"
+content+="<td><a href='"+i_url[i]+"' target='"+i_target[i]+"' style='text-decoration:"+textdeco+";font-family:"+fntsub+";font-size:"+fntsubsize+"pt;color:"+fntsubcolor+";font-weight:"+fntsubweight+"'>"
+content+=i_text[i]
+content+="</a></td></tr>"
+}
+}
+content+="</table>"
+istoppageitem=true;
+if (ie || ns6) {
+document.write('<span id="menu" style="position:relative">'+content+'</span>')
+document.close()
+}
+else if (ns4) {
+document.write('<ilayer name="menutop">')
+document.write('<layer name="menu">'+content+'</layer>')
+document.write('</ilayer>')
+document.close()
+}
+else {
+oldbrowser()
+}
+}
+function oldbrowser() {
+istoppageitem=true;
+content=""
+content+="<table border=0 cellpadding=0 cellspacing="+verspacesublevel+">"
+for (i=0;i<=i_level.length;i++) {
+if (i_level[i]==0) {
+var iplus=i+1
+if ((iplus<=i_level.length) && (i_level[iplus]==1)) {hassubmenus=true}
+else {hassubmenus=false}
+if (!istoppageitem) {
+content+="<tr><td colspan=2><img src='emptypixel.gif' height="+verspacetoplevel+"></td></tr>"
+}
+istoppageitem=false;
+content+="<tr valign=middle><td>"
+if (hassubmenus) {
+content+="<img src='"+plusminusimgsrc+"' border=0 hspace="+horspace+">"
+}
+content+="</td>"
+content+="<td><a href='"+i_url[i]+"' target='"+i_target[i]+"'><font size=3 face="+fnttop+" color="+fnttopcolor+">"
+content+=i_text[i]
+content+="</font></a></td></tr>"
+}
+else if (i_level[i]==1){
+content+="<tr valign=middle><td> </td>"
+content+="<td><a href='"+i_url[i]+"' target='"+i_target[i]+"'><font size=2 face='"+fntsub+"' color="+fntsubcolor+">"
+content+=i_text[i]
+content+="</font></a></td></tr>"
+}
+}
+content+="</table>"
+document.write(content)
+document.close()
+}
+function reloadpage() {
+location.reload(true)
+}
+if (ns4 || ns6 || ie) {
+window.onload=closesublevels
+}
+if (ns4 || ns6 || ie) {
+window.onresize=reloadpage
+}
+</script>
+<form name="flink" target="_blank" action="http://www.24fun.com">
+<input type=hidden value="">
+</form>
+</SCRIPT>
+</td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</p>
+<P align="left">
+</CENTER></BODY></HTML>

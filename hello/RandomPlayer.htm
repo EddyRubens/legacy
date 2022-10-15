@@ -1,0 +1,116 @@
+<HTML>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var timerID = null
+var timerRunning = false
+var num=4
+
+img1 = new Image()
+img1.src = "pictures/hello.jpg"
+
+img2 = new Image()
+img2.src = "pictures/itis.jpg"
+
+img3 = new Image()
+img3.src = "pictures/nice.jpg"
+
+img4 = new Image()
+img4.src = "pictures/to.jpg"
+
+img5 = new Image()
+img5.src = "pictures/meet.jpg"
+
+img6 = new Image();
+img6.src = "pictures/you.jpg";
+
+function RandomNumber(lower_limit, upper_limit) 
+{ 
+  return Math.round((upper_limit - lower_limit) * Math.random()) + lower_limit; 
+}
+
+
+function PlaySoundFromURL(SoundURL)
+{
+  BackGroundSound.src = SoundURL;
+}
+
+
+function PlaySound(SoundNumber)
+{
+  var SoundURL;
+  var Duration;
+
+  switch(SoundNumber)
+  {
+    case 1:
+      SoundURL = "sounds/hello.wav";
+      Duration = 480;
+      break;
+    case 2:
+      SoundURL = "sounds/itis.wav";
+      Duration = 600;
+      break;
+    case 3:
+      SoundURL = "sounds/nice.wav";
+      Duration = 530;
+      break;
+    case 4:
+      SoundURL = "sounds/to.wav";
+      Duration = 320;
+      break;
+    case 5:
+      SoundURL = "sounds/meet.wav";
+      Duration = 460;
+      break;
+    case 6:
+      SoundURL = "sounds/you.wav";
+      Duration = 300;
+      break;
+  }
+
+  PlaySoundFromURL(SoundURL);
+  return Duration;
+}
+
+
+function nextImage()
+{
+  var Nbr;
+  var Duration;
+
+  Nbr = RandomNumber(1, 6);
+  document.mypic.src=eval("img"+ Nbr + ".src")
+  Duration = PlaySound(Nbr);
+
+  timerID = setTimeout("nextImage()", Duration)
+  timerRunning = true
+}
+
+function stopclock()
+{
+  if(timerRunning)
+    clearTimeout(timerID)
+  timerRunning = false
+}
+
+function startclock()
+{
+  stopclock()
+  nextImage()
+}
+//-->
+
+</SCRIPT>
+
+<HEAD>
+<BGSOUND ID="BackGroundSound" LOOP=0 SRC="">
+</HEAD>
+
+<BODY bgcolor="#000000" onload="startclock()">
+  <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+  <CENTER>
+    <img src="" name="mypic" border=0>
+  </CENTER>
+
+</BODY>
+</HTML>

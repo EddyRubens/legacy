@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Adventures of an Avatar</title>
+<meta name="description" content="Journey to the North - adventures of an Avatar is an exciting travel diary. Share my adventures!">
+<meta name="keywords" content="avatar, avatars, art, netart, greenland, cyberspace, webart, diary, webkunst, netkunst,
+rosanne, klaveren, groenland, north, noordpool, computerart, greenlandic">
+<meta name="robots" content="index,follow">
+</head>
+
+<script language="JavaScript">
+function ToOne(SmallImage)
+{
+  objImage.src = SmallImage.src;
+  objOneImage.style.display="block";
+  objNineImages.style.display="none";
+}
+function ToNine()
+{
+  objOneImage.style.display="none";
+  objNineImages.style.display="block";
+}
+</script>
+<body bgcolor="#000000">
+
+<table border="0" cellpadding="0" cellspacing="0">
+<TR id="objNineImages" STYLE="display:block">
+<TD><TABLE border="0" cellpadding="0" cellspacing="0">
+<TR>
+    <TD><img onclick="ToOne(this)" src="images/photo4.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo2.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo9.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+  </TR>
+  <TR>
+    <TD><img onclick="ToOne(this)" src="images/photo3.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo8.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo1.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+  </TR>
+  <TR>
+    <TD><img onclick="ToOne(this)" src="images/photo5.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo7.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+    <TD><img onclick="ToOne(this)" src="images/photo6.gif" width="133.334" height="91.667" border="0" alt=""></TD>
+ </TR>
+					</TABLE>
+				</TD>
+			</TR>
+			<TR id="objOneImage" STYLE="display:none">
+				<TD>
+					<TABLE border="0" cellpadding="0" cellspacing="0">
+						<TR>
+							<TD>
+								<img id="objImage" onclick="ToNine()" src="sh-map.gif" width="400" height="275" alt="">
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE width="400" style="position:absolute;top:312">
+			<tr>
+				<td align=center>
+					<b><font color="#FFFFFF" face="Arial" size="2">You can only enlarge in Internet Explorer</font></b>
+				</td>
+			</tr>
+		</TABLE>
+	</body>
+</html>

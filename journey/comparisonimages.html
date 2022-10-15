@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Adventures of an Avatar</title>
+		<meta name="description" content="Journey to the North - adventures of an Avatar is an exciting travel diary. Share my adventures!">
+		<meta name="keywords" content="avatar, avatars, art, netart, greenland, cyberspace, webart, diary, webkunst, netkunst,
+rosanne, klaveren, groenland, north, noordpool, computerart, greenlandic">
+		<meta name="robots" content="index,follow">
+		<script language="JavaScript">
+function ToOne(SmallImage)
+{
+  objImage.src = SmallImage.src;
+  objOneImage.style.display="block";
+  objNineImages.style.display="none";
+}
+function ToNine()
+{
+  objOneImage.style.display="none";
+  objNineImages.style.display="block";
+}
+		</script>
+	</head>
+	<body bgcolor="#000000">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<TR id="objNineImages" STYLE="display:block">
+				<TD>
+					<TABLE border="0" cellpadding="0" cellspacing="0">
+						<TR>
+							<TD><img onclick="ToOne(this)" src="images/comparison1.jpg" width="200" height="156" alt=""></TD>
+							<TD><img onclick="ToOne(this)" src="images/comparison2.jpg" width="200" height="156" alt=""></TD>
+						</TR>
+						<TR>
+							<TD><img onclick="ToOne(this)" src="images/comparison3.jpg" width="200" height="156" alt=""></TD>
+							<TD><img onclick="ToOne(this)" src="images/comparison4.jpg" width="200" height="156" alt=""></TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+			<TR id="objOneImage" STYLE="display:none">
+				<TD>
+					<TABLE border="0" cellpadding="0" cellspacing="0">
+						<TR>
+							<TD>
+								<img id="objImage" onclick="ToNine()" src="sh-map.gif" width="400" height="312" alt="">
+							</TD>
+						</TR>
+					</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+		<TABLE width="400" style="position:absolute;top:335">
+			<tr>
+				<td align=center>
+					<b><font color="#FFFFFF" face="Arial" size="2">You can only enlarge in Internet Explorer</font></b>
+				</td>
+			</tr>
+		</TABLE>
+	</body>
+</html>

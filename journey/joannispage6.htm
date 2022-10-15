@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<title>Adventures of an Avatar</title>
+<meta name="description" content="Journey to the North - adventures of an Avatar is an exciting travel diary. Share my adventures!">
+<meta name="keywords" content="avatar, avatars, art, netart, greenland, cyberspace, webart, diary, webkunst, netkunst,
+rosanne, klaveren, groenland, north, noordpool, computerart, greenlandic">
+<meta name="robots" content="index,follow">
+<base target="_blank">
+<script language="JavaScript">
+
+      var photos0=new Array()
+      var photos1=new Array()
+      var photos2=new Array()
+      var Current0=0
+      var Current1=0
+      var Current2=0
+
+      photos0[0]="images/25 jaar.jpg"
+      photos0[1]="images/35 jaar.jpg"
+      photos0[2]="images/38 jaar.jpg"
+      photos0[3]="images/65 jaar.jpg"
+      
+
+      function backward(ArrayNbr)
+      {
+        switch (ArrayNbr)
+        {
+          case 0:
+            if (Current0 == 0)
+            {
+              Current0 = photos0.length - 1;
+            }
+            else
+            {
+              Current0--;
+            }
+            document.images.photoslider0.src=photos0[Current0];
+            break;
+          case 1:
+            if (Current1 == 0)
+            {
+              Current1 = photos1.length - 1;
+            }
+            else
+            {
+              Current1--;
+            }
+            document.images.photoslider1.src=photos1[Current1];
+            break;
+          case 2:
+            if (Current2 == 0)
+            {
+              Current2 = photos2.length - 1;
+            }
+            else
+            {
+              Current2--;
+            }
+            document.images.photoslider2.src=photos2[Current2];
+            break;
+        }
+      }
+
+      function forward(ArrayNbr)
+      {
+        switch (ArrayNbr)
+        {
+          case 0:
+            if (Current0 == photos0.length - 1)
+            {
+              Current0 = 0;
+            }
+            else
+            {
+              Current0++;
+            }
+            document.images.photoslider0.src=photos0[Current0];
+            break;
+          case 1:
+            if (Current1 == photos1.length - 1)
+            {
+              Current1 = 0;
+            }
+            else
+            {
+              Current1++;
+            }
+            document.images.photoslider1.src=photos1[Current1];
+            break;
+          case 2:
+            if (Current2 == photos1.length - 1)
+            {
+              Current2 = 0;
+            }
+            else
+            {
+              Current2++;
+            }
+            document.images.photoslider2.src=photos2[Current2];
+            break;
+        }
+      }
+    </script>
+</head>
+
+<body bgcolor="#000000" text="#000000" link="#000000" vlink="#000000" alink="#000000">
+<div align="right">
+
+<table BORDER="0" cellpadding="0" width="400" cellspacing="0" height="280">
+  <tr>
+    <td height="280"><p align="center"><img SRC="images/25 jaar.jpg" name="photoslider0" WIDTH="250" HEIGHT="293"> <img SRC="images/nexthoekje.gif" onClick="forward(0)" WIDTH="34" HEIGHT="31"></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

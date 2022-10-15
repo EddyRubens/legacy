@@ -1,0 +1,92 @@
+body {
+	background-color: #F2EFE0;
+	color: #000000;
+	
+	margin: 20px;
+}
+
+form {
+	margin: 10px 0px;
+}
+
+body, td, input, select, textarea {
+	font-family: Helvetica;
+	font-size: 11pt;
+	line-height: 12pt;
+}
+
+form {
+	margin: 0px;
+}
+
+a:link, a:visited {
+	color: #000000;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+table.invul {
+	background-color: #FFFFFF;
+	padding: 0px;
+	border: 1px solid #FFFFFF;
+	width: 100%;
+	margin-bottom: 10pt;
+}
+
+table.login {
+	background-color: #F2EFE0;
+	padding: 0px;
+	border: 1px solid #F2EFE0;
+	width: 100%;
+	margin-bottom: 10pt;
+}
+
+tr.invul {
+	background-color: #E5E3E4;
+}
+
+td.invul {
+	padding: 4px 6px;
+}
+
+td.login {
+	padding: 2px 4px;
+	font-size: 8pt;
+}
+
+td.invulrood {
+	padding: 4px 6px;
+	color: #FF0000;
+}
+
+td.nav {
+	padding: 4px 6px;
+	font-size: 10pt;
+}
+
+input.login {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px dotted #000000;
+	margin: -1px 0px;
+	font-size: 8pt;
+}
+
+.invulveldje {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px dotted #000000;
+	margin: -1px 0px;
+}
+
+.opmerk {
+	color: #706E6F;
+}
+
+.passagier {
+	text-decoration: none;
+}

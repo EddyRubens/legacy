@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<title>Rosanne van Klaveren</title>
+<meta name="description" content="Rosanne van Klaveren is a netartist. You are welcome to take a look at her latest internet projects!">
+<meta name="keywords" content="avatar, avatars, art, netart, greenland, cyberspace, webart, diary, webkunst, netkunst, internetkunst, rosanne, klaveren, groenland, north, noordpool, computerart, wentinck, hooghuis, kunstvlaai, missing, vermist, greenlandic">
+<meta name="robots" content="index,follow">
+<base target="_self">
+<style type="text/css"> 
+.snow { 
+position:absolute; 
+layer-background-color:#FFFFFF; 
+visibility:visible; 
+top:-50px; 
+font-size:1px; 
+background-color:#FFFFFF; 
+} 
+</style> 
+
+</head>
+
+<body bgcolor="#DFDBDB" link="#000000" vlink="#000000" alink="#FF0000" topmargin="2" leftmargin="0">
+
+
+<script language="javascript"> 
+var snowflakes=150; //Het aantal sneeuwvlokjes. 
+var level=3; //Snelheids Level 1 tot 5 1=Trager en 5=Snelst 
+var w3c=(document.getElementById)?true:false; 
+var ns4=(document.layers)?true:false; 
+var ie4=(document.all && !w3c)?true:false; 
+var ie5=(document.all && w3c)?true:false; 
+var ns6=(w3c && navigator.appName.indexOf("Netscape")>=0)?true:false; 
+var t=''; 
+var w_x, w_y; 
+var snow=new Array(); 
+for(i=1;i<=snowflakes;i++)t+='<div id="snow'+i+'" class="snow"></div>'; 
+document.write(t); 
+function getstartpos(obj){ 
+obj.size=Math.floor(Math.random()*4)+1 //het formaat van de sneeuwvlokjes
+obj.ystep=obj.size*level; 
+obj.xstep=obj.ystep/5; 
+if(ns4)obj.clip.width=obj.clip.height=obj.size; 
+else obj.style.width=obj.style.height=obj.size; 
+moveidto(obj,Math.floor(Math.random()*w_x)-obj.size,0); 
+} 
+function movedrop(){ 
+for(i=1;i<=snowflakes;i++){ 
+var l=(ns4)?snow[i].left:parseInt(snow[i].style.left); 
+var t=(ns4)?snow[i].top:parseInt(snow[i].style.top); 
+var pxo=(ie4||ie5)?document.body.scrollLeft:pageXOffset; 
+var pyo=(ie4||ie5)?document.body.scrollTop:pageYOffset; 
+if( (t+snow[i].ystep+snow[i].size>=w_y+pyo) || (snow[i].xpos-snow[i].size<pxo)) getstartpos(snow[i]); 
+else moveidto(snow[i], l-snow[i].xstep, t+snow[i].ystep); 
+}} 
+function getwindowdims(){ 
+w_x=(ie4||ie5)? document.body.clientWidth:window.innerWidth; 
+w_y=(ie4||ie5)? document.body.clientHeight:window.innerHeight; 
+} 
+function moveidto(id,x,y){ 
+if(ns4)id.moveTo(x,y); 
+else{ 
+id.style.left=x+'px'; 
+id.style.top=y+'px'; 
+}} 
+window.onresize=function(){ 
+if(ns4)setTimeout('history.go(0)',400); 
+else getwindowdims(); 
+} 
+window.onload=function(){ 
+level=Math.max(Math.min(5,level),1) 
+getwindowdims(); 
+for(i=1;i<=snowflakes;i++){ 
+snow[i]=(ns4)?document.layers['snow'+i]:(ie4)?document.all['snow'+i]:document.getElementById('snow'+i); 
+getstartpos(snow[i]); 
+moveidto(snow[i],Math.floor(Math.random()*(w_x-10)),Math.floor(Math.random()*(w_y-10))); 
+} 
+setInterval('movedrop()',50); 
+} 
+</script>
+</body>
+</html>

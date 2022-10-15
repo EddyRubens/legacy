@@ -1,0 +1,75 @@
+<html>
+<head>
+<META NAME="robots" CONTENT="noindex,nofollow">
+	<title></title>
+</head>
+<script language="VBScript">
+dim ImageList(23)
+sub InitList
+  ImageList(1) = "images/2.jpg"
+  ImageList(2) = "images/3.jpg"
+  ImageList(3) = "images/4.jpg"
+  ImageList(4) = "images/5.jpg"
+  ImageList(5) = "images/6.jpg"
+  ImageList(6) = "images/7.jpg"
+  ImageList(7) = "images/8.jpg"
+  ImageList(8) = "images/9.jpg"
+  ImageList(9) = "images/10.jpg"
+  ImageList(10) = "images/11.jpg"
+  ImageList(11) = "images/12.jpg"
+  ImageList(12) = "images/13.jpg"
+  ImageList(13) = "images/14.jpg"
+  ImageList(14) = "images/15.jpg"
+  ImageList(15) = "images/16.jpg"
+  ImageList(16) = "images/17.jpg"
+  ImageList(17) = "images/18.jpg"
+  ImageList(18) = "images/19.jpg"
+  ImageList(19) = "images/20.jpg"
+  ImageList(20) = "images/21.jpg"
+  ImageList(21) = "images/22.jpg"
+  ImageList(22) = "images/23.jpg"
+  ImageList(23) = "images/24.jpg"
+end sub
+sub GetTheUrl(objImage)
+  objImage.src = ImageList(Int((23 * Rnd) + 1))
+  window.status = objImage.src
+end sub
+</script>
+<body onload="InitList" bgcolor="#000000" scroll="no">
+<div id=objNineImages>
+<TABLE align=right border="0" bordercolor="Red" width="400" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/8.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/2.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/3.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/16.jpg" width="100" height="75" border="0" alt=""></TD>
+  </TR>
+  <TR>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/5.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/6.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/7.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/9.jpg" width="100" height="75" border="0" alt=""></TD>
+  </TR>
+  <TR>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/13.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/14.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/11.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/12.jpg" width="100" height="75" border="0" alt=""></TD>
+  </TR>
+  <TR>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/10.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/15.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/4.jpg" width="100" height="75" border="0" alt=""></TD>
+    <TD><img onmouseover="GetTheUrl(me)" src="images/17.jpg" width="100" height="75" border="0" alt=""></TD>
+</TR>
+</TABLE>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div align="right" style="position:absolute;top:330;left:95">
+  <table border="0" width="400" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%"><b><font color="#FFFFFF" face="Arial" size="2">- you can only animate in Internet Explorer on PC -</font></b></td>
+    </tr>
+
+</body>
